@@ -1,0 +1,12 @@
+.ed-container {
+	width: 100%;
+	border: 1px solid #ccc;
+	box-shadow:2px 3px 15px #ccc;
+}
+.ed-menu {
+	position: relative;
+}
+.ed-body {
+	min-height: 200px;
+	position: relative;
+}
