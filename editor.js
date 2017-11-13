@@ -6,8 +6,10 @@
 
 var Editor = (function(){
 
-	var menuItem = 'bold italic redo undo underline strikethrough superscript subscript insertorderedlist insertunorderedlist '+
-		'cleardoc selectall link unlink print preview justifyleft justifycenter justifyright justifyfull removeformat horizontal drafts';
+	var menuItem = 'undo redo | bold italic underline strikethrough '+
+		'| superscript subscript | removeformat | insertorderedlist insertunorderedlist '+
+		'| selectall cleardoc link unlink print preview '+
+		'| justifyleft justifycenter justifyright horizontal';
 
 	var util = {
 		each: function (obj, callback) {
@@ -50,22 +52,31 @@ var Editor = (function(){
 			this.elem.appendChild(this.body);
 		},
 		menu: function () {
-			var _self = this;
-			var menubox = this.createElem('div');
-			menubox.className = 'ed-menu';
+			var me = this,
+				menubox = this.createElem('div');
+			menubox.className = 'ed-menu clearfix';
 			menubox.onmousedown = function (e) { e.preventDefault(); }
 
 			util.each(menuItem.split(' '), function (i, v) {
-				var item = _self.createElem('button');
-				item.onmousedown = function () {
-					if (!_self.isfocus()) {_self.body.focus();}
-					document.execCommand(v);
-				}
-				item.innerHTML = v;
-				menubox.appendChild(item);
+				menubox.appendChild(me.menubutton(v));
 			});
 
 			this.menu = menubox;
+		},
+		menubutton: function (_type) {
+			var me = this,
+				item = me.createElem('div');
+			if (_type === '|') {
+				item.className = 'edui-icon-separator';
+				return item;
+			}
+			item.className = 'edui-icon-' + _type;
+			item.onmousedown = function () {
+				if (!me.isfocus()) { me.body.focus(); }
+				document.execCommand(_type);
+			}
+
+			return item;
 		},
 		box: function () {
 			var bodyBox = this.createElem('div');

@@ -1,12 +1,117 @@
+
+.clearfix::before, .clearfix::after {
+	content:'';
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+[class^='ed-'] {
+	box-sizing: border-box;
+}
 .ed-container {
 	width: 100%;
-	border: 1px solid #ccc;
+	border: 1px solid #d4d4d4;
 	box-shadow:2px 3px 15px #ccc;
 }
 .ed-menu {
 	position: relative;
+	padding: 5px;
+	border: 1px solid #e1e1e1;
+	box-shadow: 2px 2px 5px #ccc;
 }
 .ed-body {
 	min-height: 200px;
+	padding: 0 10px;
+	cursor: text;
 	position: relative;
+}
+.ed-body:focus {
+	outline: none;
+}
+[class^='edui-icon-'] {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin: 0 1px;
+	background-image: url('img/icons.png');
+}
+.edui-icon-bold {
+	background-position: 0 0;
+}
+.edui-icon-italic {
+	background-position: -60px 0;
+}
+.edui-icon-separator {
+	background-position: -179px 1px;
+	width: 5px;
+}
+.edui-icon-undo {
+	background-position: -160px 0;
+}
+.edui-icon-redo {
+	background-position: -100px 0;
+}
+.edui-icon-underline {
+	background-position: -140px 0;
+}
+.edui-icon-strikethrough {
+	background-position: -120px 0;
+}
+.edui-icon-superscript {
+	background-position: -620px 0;
+}
+.edui-icon-subscript {
+	background-position: -600px 0;
+}
+.edui-icon-removeformat {
+	background-position: -580px 0;
+}
+.edui-icon-insertorderedlist {
+	background-position: -80px 0;
+}
+.edui-icon-insertunorderedlist {
+	background-position: -20px 0;
+}
+.edui-icon-selectall {
+	background-position: -400px -20px;
+}
+.edui-icon-cleardoc {
+	background-position: -520px 0;
+}
+.edui-icon-link {
+	background-position: -500px 0;
+}
+.edui-icon-unlink {
+	background-position: -640px 0;
+}
+.edui-icon-print {
+	background-position: -440px -20px;
+}
+.edui-icon-preview {
+	background-position: -420px -20px;
+}
+.edui-icon-justifyleft {
+	background-position: -460px 0;
+}
+.edui-icon-justifycenter {
+	background-position: -420px 0;
+}
+.edui-icon-justifyright {
+	background-position: -480px 0;
+}
+.edui-icon-horizontal {
+	background-position: -360px 0;
+}
+.edui-icon-drafts {
+	background-position: -560px 0;
+}
+.edui-icon- {
+	background-position: 0 0;
+}
+.edui-icon- {
+	background-position: 0 0;
+}
+.edui-icon- {
+	background-position: 0 0;
 }
