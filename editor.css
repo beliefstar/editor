@@ -13,6 +13,7 @@
 	width: 100%;
 	border: 1px solid #d4d4d4;
 	box-shadow:2px 3px 15px #ccc;
+	position: relative;
 }
 .ed-menu {
 	position: relative;
@@ -20,15 +21,66 @@
 	border: 1px solid #e1e1e1;
 	box-shadow: 2px 2px 5px #ccc;
 }
-.ed-body {
+.ed-body-container {
 	min-height: 200px;
 	padding: 0 10px;
 	cursor: text;
 	position: relative;
 }
-.ed-body:focus {
+.ed-body-container:focus {
 	outline: none;
 }
+
+.edui-model-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #777;
+	opacity: 0.3;
+}
+.edui-model {
+	position: fixed;
+	_position: absolute;
+	top: 10%;
+	left: 50%;
+	border: 1px solid #999;
+	background-color: #fff;
+	z-index: 1000;
+}
+.edui-model-head {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.edui-model-head h3 {
+	margin: 0;
+	float: left;
+}
+.edui-model-head .edui-close {
+	box-sizing: border-box;
+	float: right;
+	font-size: 20px;
+	width: 25px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1px solid #fff;
+}
+.edui-model-head .edui-close:hover {
+	background: #d5e1f2;
+	border-color: #ccc;
+}
+.edui-model-body {
+	padding: 10px;
+}
+.edui-model-foot {
+	padding: 10px;
+	height: 25px;
+	text-align: right;
+	border-top: 1px solid #ccc;
+}
+
 [class^='edui-icon-'] {
 	width: 20px;
 	height: 20px;
@@ -106,12 +158,24 @@
 .edui-icon-drafts {
 	background-position: -560px 0;
 }
-.edui-icon- {
-	background-position: 0 0;
+.edui-icon-source {
+	background-position: -260px -0px;
 }
 .edui-icon- {
 	background-position: 0 0;
 }
 .edui-icon- {
 	background-position: 0 0;
+}
+.edui-model-link {
+	width: 400px;
+	margin-left: -200px;
+	z-index: 1001;
+}
+.edui-link-table {
+	font-size: 12px;
+	height: 100px;
+}
+.disable {
+	opacity: 0.5;
 }

@@ -7,61 +7,23 @@
 </head>
 <body>
 	
+
 	<div id="editor-box">初始化内容</div>
 
 	<div id="state"></div>
+	<div id="content"></div>
+
+	
 	<script type="text/javascript" src="editor.js"></script>
 	<script type="text/javascript">
+		//初始化编辑器
 		var ed = new Editor('editor-box');
+
 		document.onclick = function () {
 			document.getElementById("state").innerHTML = ed.isfocus();
+			document.getElementById('content').innerHTML = ed.getContent();
 		}
 	</script>
 
-<!-- 
-	<div id="testDiv">
-		<p>sgdasdga<b>d</b>gfdocument.getElementById("testD</p>
-	</div>
-	<script type="text/javascript">
-		var testDiv = document.getElementById("testDiv");
-
-		testDiv.onmouseup = function(){
-
-		var selectionObj = null, rangeObj = null, selectedText = "", selectedHtml = "";
-
-		if(window.getSelection){
-
-		selectionObj = window.getSelection();
-
-		selectedText = selectionObj.toString();
-
-		rangeObj = selectionObj.getRangeAt(0);
-
-		var docFragment = rangeObj.cloneContents();
-
-		var tempDiv = document.createElement("div");
-
-		tempDiv.appendChild(docFragment);
-
-		selectedHtml = tempDiv.innerHTML;
-
-		}else if(document.selection){
-
-		selectionObj = document.selection;
-
-		rangeObj = selectionObj.createRange();
-
-		selectedText = rangeObj.text;
-
-		selectedHtml = rangeObj.htmlText;
-
-		}
-
-		alert(selectedText);
-
-		alert(selectedHtml);
-
-		};
-	</script> -->
 </body>
 </html>
